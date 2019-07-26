@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "strictNullChecks": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "watch": true,
+        "target": "es2015",
+        "lib": ["dom", "es2015", "es2017"],
+        "outDir": "dist"
+    },
+    "include": [
+        "./server/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
