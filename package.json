@@ -5,7 +5,8 @@
   "main": "./server/index.ts",
   "scripts": {
     "server": "ts-node ./src/index.ts",
-    "start": "npm run server"
+    "start": "npm run server",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

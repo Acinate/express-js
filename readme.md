@@ -45,12 +45,11 @@ Add the following code to your `tsconfig.json`
     "strictNullChecks": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "watch": true,
     "target": "es2015",
     "lib": ["dom", "es2015", "es2017"],
     "outDir": "dist"
   },
-  "include": ["./server/**/*"],
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
 ```
@@ -93,14 +92,16 @@ Add the following code to `package.json`
   "description": "Express.ts",
   "main": "./server/index.ts",
   "scripts": {
-    "server": "ts-node ./server/index.ts",
-    "start": "npm run server"
+    "server": "ts-node ./src/index.ts",
+    "start": "npm run server",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.0",
+    "body-parser": "^1.19.0",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   },
@@ -110,8 +111,20 @@ Add the following code to `package.json`
 }
 ```
 
-## Start the server
+## Start the server locally
 
 To start the server type in the following command
 
 `npm start`
+
+## Build the server for production
+
+When running the server in production you will usually run in Vanilla Javascript using a Process Management tool like PM2.
+
+To compile our .ts files into .js files we just run the command `tsc`
+
+We can also run the command that we setup in our package.json file
+
+`npm run build`
+
+Your .js files will be available in the `/dist` directory
