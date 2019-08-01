@@ -5,6 +5,7 @@ Express.js is a wonderful framework for the backend these days. You can get up a
 In order to solve this problem, we will be introducing typing to our project to prevent bugs that we may write by accident. This project will also demo a current "Best Practice" for structuring your Node.js applications.
 
 ### Things to implement into our project
+
 - TypeScript
 - Express.js
 - MongoDB
@@ -36,26 +37,21 @@ Add the following code to your `tsconfig.json`
 
 ```json
 {
-    "compilerOptions": {
-        "baseUrl": "./",
-        "module": "commonjs",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "strictNullChecks": true,
-        "preserveConstEnums": true,
-        "sourceMap": true,
-        "watch": true,
-        "target": "es2015",
-        "lib": ["dom", "es2015", "es2017"],
-        "outDir": "dist"
-    },
-    "include": [
-        "./server/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "**/*.spec.ts"
-    ]
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "watch": true,
+    "target": "es2015",
+    "lib": ["dom", "es2015", "es2017"],
+    "outDir": "dist"
+  },
+  "include": ["./server/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
 ```
 
@@ -72,11 +68,11 @@ const server: express.Application = express();
 const port: number = 3000;
 
 server.get("/", (req, res) => {
-    res.send("Hello World!");
+  res.send("Hello World!");
 });
 
 server.listen(port, () => {
-    console.log("Server listening on port " + port);
+  console.log("Server listening on port " + port);
 });
 ```
 
@@ -84,7 +80,7 @@ server.listen(port, () => {
 
 ## Install Express.js Dependency
 
-`npm install --save-dev @types/express`
+`npm install --save-dev express @types/express`
 
 ## Setup Package.json File
 
