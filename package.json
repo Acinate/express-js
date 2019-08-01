@@ -4,7 +4,7 @@
   "description": "Express.ts",
   "main": "./server/index.ts",
   "scripts": {
-    "server": "ts-node ./server/index.ts",
+    "server": "ts-node ./src/index.ts",
     "start": "npm run server"
   },
   "keywords": [],
