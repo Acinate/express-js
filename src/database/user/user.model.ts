@@ -1,21 +1,21 @@
 export class User {
-    constructor(data?: any) {
-        const def = {
-            _id: "",
-            username: "",
-            password: "",
-            email: "",
-            ...data
-        };
+  public _id: string;
+  public username: string;
+  public password: string;
+  public email: string;
 
-        this._id = def._id;
-        this.username = def.username;
-        this.password = def.password;
-        this.email = def.email;
-    }
+  constructor(data?: any) {
+    const def = {
+      _id: "",
+      email: "",
+      password: "",
+      username: "",
+      ...data
+    };
 
-    _id: String;
-    username: String;
-    password: String;
-    email: String;
+    this._id = def._id;
+    this.username = def.username;
+    this.password = def.password;
+    this.email = def.email;
+  }
 }

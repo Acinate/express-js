@@ -1,5 +1,5 @@
-import { UserDatabase } from "./../database/user/user.database";
 import express, { Request, Response } from "express";
+import { UserDatabase } from "./../database/user/user.database";
 const router = express.Router();
 const database = new UserDatabase();
 
