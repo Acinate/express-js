@@ -1,130 +1,29 @@
-# Node Express.js Webserver using TypeScript
+# Express-Typescript
 
-Express.js is a wonderful framework for the backend these days. You can get up and running in minutes while also having a blazing fast asynchronous backend system. However, using JavaScript on the backend can be a little tricky and can often introduce unwanted bugs in your code that can be hard to spot, find and may cause failures in production systems.
+Provides you with a lightweight implementation of Express that uses Typescript, Babel and Webpack.
 
-In order to solve this problem, we will be introducing typing to our project to prevent bugs that we may write by accident. This project will also demo a current "Best Practice" for structuring your Node.js applications.
+## Download & Setup
 
-### Things to implement into our project
-
-- TypeScript
-- Express.js
-- MongoDB
-- Environments
-
-# Setting up the project
-
-In this section I will guide you through setting up this environment from scratch.
-
-## Create the Project
-
-Create project folder
-
-`mkdir express-typescript && cd express-typescript`
-
-Initialize the project as a npm project
-
-`npm init -y`
-
-## Setup Typescript
-
-During development, we can run our TypeScript directly code from the .ts files we create. But for production, we need a way to transpile these .ts files into .js files. We will use a `tsconfig.json` to set options for compiling our TypeScript files.
-
-Add `tsconfig.json` to the root of your project
-
-`touch tsconfig.json`
-
-Add the following code to your `tsconfig.json`
-
-```json
-{
-  "compilerOptions": {
-    "baseUrl": "./",
-    "module": "commonjs",
-    "noImplicitAny": true,
-    "removeComments": true,
-    "strictNullChecks": true,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "target": "es2015",
-    "lib": ["dom", "es2015", "es2017"],
-    "outDir": "dist"
-  },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
-}
+```
+git clone https://github.com/Acinate/express-typescript.git
+cd express-typescript
+npm install
 ```
 
-## Create Server File
+## Run in Development mode
 
-`mkdir server && touch server/index.ts`
+For use in development. Visit http://localhost:3000 to interact with server.
 
-Add the following code to `index.ts`
+`npm run dev`
 
-```typescript
-import express = require("express");
+## Run in Production mode
 
-const server: express.Application = express();
-const port: number = 3000;
+For use in development. Visit http://localhost:3000 to interact with server.
 
-server.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+`npm run prod`
 
-server.listen(port, () => {
-  console.log("Server listening on port " + port);
-});
-```
+## Create Static Bundle for Deployment
 
-(You will have some typing errors, to fix, move on to the next step)
-
-## Install Express.js Dependency
-
-`npm install --save-dev express @types/express`
-
-## Setup Package.json File
-
-Add the following code to `package.json`
-
-```json
-{
-  "name": "express-typescript",
-  "version": "1.0.0",
-  "description": "Express.ts",
-  "main": "./server/index.ts",
-  "scripts": {
-    "server": "ts-node ./src/index.ts",
-    "start": "npm run server",
-    "build": "tsc"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/express": "^4.17.0",
-    "body-parser": "^1.19.0",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  }
-}
-```
-
-## Start the server locally
-
-To start the server type in the following command
-
-`npm start`
-
-## Build the server for production
-
-When running the server in production you will usually run in Vanilla Javascript using a Process Management tool like PM2.
-
-To compile our .ts files into .js files we just run the command `tsc`
-
-We can also run the command that we setup in our package.json file
+For use in production. Files will be available in the /dist/ folder at project root.
 
 `npm run build`
-
-Your .js files will be available in the `/dist` directory
