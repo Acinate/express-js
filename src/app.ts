@@ -2,6 +2,8 @@ import express from "express";
 import compression from "compression";
 import bodyParser from "body-parser";
 
+import { API_KEY } from "./util/secrets";
+
 // Controllers (route handlers)
 import * as homeController from "./controllers/home";
 
