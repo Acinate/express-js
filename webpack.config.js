@@ -5,7 +5,7 @@ module.exports = {
   mode: 'production',
   target: 'node',
   entry: {
-    server: ['./src/index.ts']
+    server: ['./src/server.ts']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
