@@ -1,4 +1,14 @@
-.env
+# Build
 /dist
+
+# API keys and secrets
+.env
+
+# Dependency directories
 /node_modules
-package-lock.json
+
+# OS metadata
+.DS_Store
+
+# Logs
+debug.log
