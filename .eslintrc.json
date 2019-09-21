@@ -15,11 +15,13 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "semi": ["error", "always"],
-    "quotes": ["error", "always"],
     "comma-dangle": "off",
+    "import/no-unresolved": "off",
     "arrow-body-style": "off",
     "no-unused-vars": "warn",
+    "no-shadow": "warn",
+    "quotes": ["error", "always"],
+    "semi": ["error", "always"],
     "lines-between-class-members": "off",
     "no-underscore-dangle": "off"
   },
