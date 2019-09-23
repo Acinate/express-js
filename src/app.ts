@@ -2,7 +2,7 @@ import express from "express";
 import compression from "compression";
 import bodyParser from "body-parser";
 
-import { API_KEY } from "./util/secrets";
+import { PORT, API_KEY } from "./util/secrets";
 
 // Controllers (route handlers)
 import * as homeController from "./controllers/home";
@@ -11,7 +11,7 @@ import * as homeController from "./controllers/home";
 const app = express();
 
 // Express configuration
-app.set("port", process.env.PORT || 3000);
+app.set("port", PORT);
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
