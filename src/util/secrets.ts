@@ -28,4 +28,5 @@ export const PORT = process.env["PORT"];
 
 if (!PORT) {
   logger.error("No port specified. Set PORT environmental varible.");
+  process.exit(1);
 }
