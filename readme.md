@@ -16,6 +16,12 @@ For use in development. Visit http://localhost:3000 to interact with server.
 
 `npm run dev`
 
+## Run Test mode
+
+For use in development. Visit http://localhost:3000 to interact with server.
+
+`npm run test:watch`
+
 ## Run in Production mode
 
 For use in development. Visit http://localhost:3000 to interact with server.
