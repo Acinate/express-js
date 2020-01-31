@@ -1,27 +1,46 @@
 <html>
 <head>
     <title>OAuth Tutorials</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="material/css/materialize.min.css"
+          media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 <nav>
-    <ul>
-        <li>
-            <a href="/">Homepage</a>
-            <a href="/profile">Profile</a>
-            <% if (user) { %>
-                <a href="/auth/logout">Logout</a>
-            <% } else { %>
-                <a href="/auth/login">Login</a>
-            <% } %>
-        </li>
-    </ul>
+    <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">OAuth 2.0</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a class="waves-effect waves-light" href="/">Homepage</a>
+            </li>
+            <li>
+                <a class="waves-effect waves-light" href="/profile">Profile</a>
+            </li>
+            <li>
+                <% if (user) { %>
+                    <a class="waves-effect waves-light btn" href="/auth/logout">Logout</a>
+                <% } else { %>
+                    <a class="waves-effect waves-light btn" href="/auth/login">Login</a>
+                <% } %>
+            </li>
+        </ul>
+    </div>
 </nav>
-<header>
-    <h1>Welcome to application</h1>
-    <h2>Homepage</h2>
-</header>
-<main>
-    <p>This is an example application that uses OAuth and Passport.js</p>
+<main class="container">
+    <h3>What is OAuth 2.0?</h3>
+    <p>OAuth 2.0 is the industry-standard protocol for authorization. OAuth 2.0 focuses on client developer simplicity
+        while providing specific authorization flows for web applications, desktop applications, mobile phones, and
+        living room devices. This specification and its extensions are being developed within the IETF OAuth Working
+        Group.</p>
+    <h3>What is Passport.js?</h3>
+    <p>Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively
+        dropped in to any Express-based web application. A comprehensive set of strategies support authentication using
+        a username and password, Facebook, Twitter, and more.</p>
 </main>
+<script type="text/javascript" src="/material/js/materialize.js"></script>
 </body>
 </html>

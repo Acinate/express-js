@@ -1,26 +1,69 @@
 <html>
 <head>
     <title>Login</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/material/css/materialize.min.css"
+          media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import Material Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <nav>
-    <ul>
-        <li>
-            <a href="/">Homepage</a>
-            <a href="/profile">Profile</a>
-            <% if (user) { %>
-                <a href="/auth/logout">Logout</a>
-            <% } else { %>
-                <a href="/auth/login">Login</a>
-            <% } %>
-        </li>
-    </ul>
+    <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">OAuth 2.0</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a class="waves-effect waves-light" href="/">Homepage</a>
+            </li>
+            <li>
+                <a class="waves-effect waves-light" href="/profile">Profile</a>
+            </li>
+            <li>
+                <% if (user) { %>
+                    <a class="waves-effect waves-light btn" href="/auth/logout">Logout</a>
+                <% } else { %>
+                    <a class="waves-effect waves-light btn" href="/auth/login">Login</a>
+                <% } %>
+            </li>
+        </ul>
+    </div>
 </nav>
-<header>
-    <h1>Login using...</h1>
-</header>
-<main>
-    <a href="/auth/google">Google</a>
+<main class="container">
+    <header class="row">
+        <h3 class="col s6 offset-m3">Login</h3>
+    </header>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6 offset-m3">
+                    <input id="email" type="text" class="validate">
+                    <label for="email">Email address</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-m3">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <a class="waves-effect waves-light btn-large col s6 offset-m3 disabled">Login</a>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <hr class="col s6 offset-m3">
+    </div>
+    <div class="row">
+        <a class="waves-effect waves-light btn-large col s6 offset-m3" href="/auth/google">Log in with Google</a>
+    </div>
+
+
 </main>
+<script type="text/javascript" src="/material/js/materialize.js"></script>
 </body>
 </html>

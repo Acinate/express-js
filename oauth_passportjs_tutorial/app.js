@@ -12,6 +12,8 @@ const app = express();
 // set up view engine
 app.set('view engine', 'ejs');
 
+app.use('/material', express.static(__dirname + '/node_modules/materialize-css/dist/'));
+
 // set up express session
 app.use(session({
     secret: process.env.SESSION_KEY,

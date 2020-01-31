@@ -18,8 +18,8 @@ passport.use(
             clientID: process.env.CLIENT_ID,
             clientSecret: process.env.CLIENT_SECRET
         }, (token, tokenSecret, profile, done) => {
-            // check if user already exists in our db
             console.log(profile);
+            // check if user already exists in our db
             User.findOne({googleId: profile.id}).then((currentUser) => {
                 if (currentUser) {
                     // already have the user
