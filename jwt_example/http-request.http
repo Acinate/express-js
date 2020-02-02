@@ -1,0 +1,31 @@
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmFzb24iLCJpYXQiOjE1ODA2MTA2NTcsImV4cCI6MTU4MDYxMDY3Mn0.kgWi82JI9o0eRWYEJYNQdrclTEoVa18qoIVDe7mMNU4
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "Jason"
+}
+
+###
+
+POST http://localhost:3000/token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmFzb24iLCJpYXQiOjE1ODA2MTA2MjR9.aNkS8y67w3q6MeSa53Ihiyi5j_8JK_l7E04apHsgYyU"
+}
+
+###
+
+DELETE http://localhost:3000/logout
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmFzb24iLCJpYXQiOjE1ODA2MTA2MjR9.aNkS8y67w3q6MeSa53Ihiyi5j_8JK_l7E04apHsgYyU"
+}
+
+###
