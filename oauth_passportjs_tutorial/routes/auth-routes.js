@@ -19,7 +19,26 @@ router.get('/google', passport.authenticate('google', {
 
 // callback route for google to redirect to
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    // res.send(req.user);
+    res.redirect('/profile');
+});
+
+// auth with facebook
+router.get('/facebook', passport.authenticate('facebook'));
+
+// callback route for google to redirect to
+router.get('/facebook/redirect', passport.authenticate('facebook', {
+    scope: ['profile', 'email']
+}), (req, res) => {
+    res.redirect('/profile');
+});
+
+// auth with twitter
+router.get('/twitter', passport.authenticate('twitter'));
+
+// callback route for twitter to redirect to
+router.get('/twitter/redirect', passport.authenticate('twitter', {
+    scope: ['profile', 'email']
+}), (req, res) => {
     res.redirect('/profile');
 });
 

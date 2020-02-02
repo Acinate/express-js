@@ -1,6 +1,6 @@
 # OAuth 2.0 with Passport.js and Express.js
 
-This project demonstrates how to use external services like Google, Facebook, and Twitter to create or login to accounts.
+This project demonstrates how to use OAuth 2.0 services provided by Google, Facebook, Twitter and LinkedIn to access user information.
 
 ## Features
 
@@ -8,6 +8,7 @@ This project demonstrates how to use external services like Google, Facebook, an
 
 ## Todo
 
-* Facebook Login
-* Twitter Login
-* LinkedIn Login
+* Facebook login
+* Twitter login
+* LinkedIn login
+* Add tests
